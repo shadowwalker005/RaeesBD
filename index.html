@@ -46,9 +46,23 @@
 
 </style>
 
+
+<script type="text/javascript">
+function d() {
+var viewMode = getCookie("view-mode");
+if(viewMode == "desktop"){
+    viewport.setAttribute('content', 'width=1024');
+}else if (viewMode == "mobile"){
+    viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
+}
+}
+
+window.onload = d;
+</script>
+
 </head>
 
-<body style='background-size:100%;'>
+<body style='background-size:100%;' onload="d();">
 	<div class="loading"></div>
 	<audio class="song" controls loop>
         <source src="hbd.mp3"></source>
